@@ -1,4 +1,10 @@
 ﻿using System;
+using Kolokwium1;
+
+
+// To jest plik od mojego wykładowcy i tu go podłączam
+using String;
+
 
 namespace Kolokwium
 {
@@ -47,6 +53,15 @@ namespace Kolokwium
         }
         static void Main(string[] args)
         {
+            More_Files.Read();
+
+            Pliki.Files();
+
+            // Metoda stowrzona przez mojego wykładowce
+            Console.WriteLine("Tu zaczyna sie to cos od wykladowcy");
+            Sth.noMain();
+            Console.WriteLine("Tu konczy sie to cos od wykladowcy");
+
             // 2D arry
             Array2D();
 
