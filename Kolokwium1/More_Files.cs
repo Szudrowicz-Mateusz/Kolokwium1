@@ -48,7 +48,55 @@ namespace Kolokwium1
                 Console.WriteLine("[{0}] = {1}", i, buffer[i]);
             }
 
+            // Pauza
             Console.ReadKey();
+
+            StreamWriter sw = null;
+
+            try
+            {
+                sw = new StreamWriter("..\\plik.txt");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            Console.WriteLine("Wprowadzaj wiersze tekstu do zapisu");
+            Console.WriteLine("Aby zakończyć wpisz koniec");
+            string linia;
+            try
+            {
+                do
+                {
+                    linia = Console.ReadLine();
+                    sw.WriteLine(linia);
+                } while (linia != "koniec");
+                sw.Close();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            StreamReader sr = null;
+            try
+            {
+                sr = new StreamReader("..\\plik.txt");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            string zawartosc = sr.ReadToEnd();
+                Console.WriteLine(zawartosc);
+
+            
+            
+            sr.Close();
+
+
         }
     }
 }
